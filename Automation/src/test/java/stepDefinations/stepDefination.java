@@ -49,8 +49,6 @@ public class stepDefination {
     	 System.out.println(arg1);
     	 System.out.println(arg2);
     	 
-    	
-    	 
     }
 
 

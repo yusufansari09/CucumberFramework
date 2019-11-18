@@ -44,11 +44,13 @@ public class HomePage {
 	
 	public void clickOnCartButton()
 	{
-		driver.findElement(cartButton);
+		driver.findElement(cartButton).click();
 	}
 
-	public void proccedTocheckOutPage()
+	public CheckOutPage proccedTocheckOutPage()
 	{
 		driver.findElement(checkoutbtn).click();
+		return new CheckOutPage(driver);
+		
 	}
 }

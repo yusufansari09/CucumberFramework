@@ -30,6 +30,7 @@ public class SearchForItems {
 
     @When("^User searched for (.+) vegetable$")
     public void user_searched_for_vegetable(String strArg1) throws Throwable {
+    	onHomePage = new HomePage(driver);
     	onHomePage.searchForAnItemWith(strArg1);
     	Thread.sleep(3000);
     }
@@ -53,12 +54,13 @@ public class SearchForItems {
     @And("^User proceed to checkout page for purchase$")
     public void user_proceed_to_checkout_page_for_purchase() throws Throwable {
     	onHomePage.clickOnCartButton();
-    	onHomePage.proccedTocheckOutPage();
+    	onCheckOutPage = onHomePage.proccedTocheckOutPage();
     }
     
     @Then("^verify that selected (.+) is displayed in checkout page$")
     public void verify_that_selected_is_displayed_in_checkout_page(String selectedItem) throws Throwable {
     	onCheckOutPage.productMatchesSelectedItem(selectedItem);
+    	Thread.sleep(3000);
     }
 
 }
