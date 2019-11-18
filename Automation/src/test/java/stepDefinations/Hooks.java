@@ -31,7 +31,7 @@ public class Hooks extends Base{
 		System.out.println("  After Web before hook");
 	}
 	
-	@After("@SeleniumTest")
+	@After("@RegressionTest")
 	public void afterSeleniumTest()
 	{
 		driver.quit();
